@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> JavaScript if ststement </h2>
+    <p id="age"></p>
+    <p id="demo"></p>
+    <script>
+        let age = 21;
+        let msg = 'You can drive';
+        if (age <= 18) {
+            msg = "You can't drive"
+        }
+        document.getElementById("demo").innerHTML = msg;
+        document.getElementById("age").innerHTML = 'Your age is: ' + age;
+    </script>
+</body>
+</html>
+
