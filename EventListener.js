@@ -7,6 +7,7 @@ btn1.onclick = () => {
 
 //---------------------------------------------------------------------------
 let div = document.querySelector('div')
+div.onm
 div.addEventListener('mouseover', () => {
     document.querySelector('#hide').style.visibility = 'visible';
 })

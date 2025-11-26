@@ -1,0 +1,55 @@
+body{
+    background-color: black;
+    display:flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.player-indicator{
+    height: 6vmin;
+    width: 16vmin;
+    border-radius: 0.6rem;
+    border-style: solid;
+}
+    
+.hide{
+    display: none;
+}
+
+.container{
+    height: 80vh;
+    width: 80dvw;
+    /* border: dashed;
+    border-color: aqua; */
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.game{
+    /* background-color:antiquewhite; */
+    height: 70vmin;
+    width: 70vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.8vmin;
+}
+
+.box{
+    height:18vmin;
+    width: 18vmin;
+    border-radius: 1rem;
+    font-size: 12vmin;
+    /* display: flex;
+    justify-content: center; */
+    /* align-items: center;
+    align-content: center; */
+    text-align: center;
+}
+
+#reset-btn{
+    width: 10vw; 
+    padding: 0.8rem;
+}
