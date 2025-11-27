@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+#heading{
+    background-color: blanchedalmond;
+    color:blueviolet;
+    font-size: 4rem;
+    padding: 1rem;
+}
+
+
+.choices{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    margin: 2rem;
+}
+
+
+.choice{
+    height: 32vmin;
+    width: 32vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border:4px solid whitesmoke;
+}
+
+
+img{
+    height: 30vmin;
+    width: 30vmin;
+    object-fit:cover;
+    border-radius: 50%;
+}
+
+.choice:hover{
+    border:4px solid rgb(91, 218, 32);
+    cursor: pointer;
+}
+
+.score-board{
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+}
+
+.score{
+    background-color: greenyellow;
+    height: 12vmin;
+    width: 12vmin;
+    border-radius: 1rem;
+    align-content: center;
+    border: 4px solid blueviolet;
+    font-size: 20px;    
+}
+
+.msg-container{
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+#msg{
+    background-color: black;
+    color: aliceblue;
+    font-size: 1.2rem;
+    display: inline;
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+}
+
+#reset-div{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    margin-top: 2rem;
+}
+
+#reset-btn{
+    background-color: blueviolet;
+    font-size: 1rem;
+    padding: 4px;
+    border-radius: 0.4rem;
+    border: 2px solid black;
+}

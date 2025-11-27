@@ -1,8 +1,14 @@
+let player_1 = document.querySelector('.player-1')
+let player_2 = document.querySelector('.player-2')
 let boxes = document.querySelectorAll('.box');
-let resetButton = document.getElementById('reset-btn');
+let resetButton = document.querySelector('#reset-btn');
+let newGameBtn = document.querySelector('#new-btn')
+let msgContainer = document.querySelector('.msgContainer')
+let greeting = document.querySelector('#greet')
+
 
 let turnX = true;
-
+let playerTurn = () => player_1.style.backgroundColor = 'green'
 const winningPatterns = [
     [0,1,2],
     [3,4,5],
@@ -15,16 +21,31 @@ const winningPatterns = [
 ]
 
 
+const resetGame = () => {
+    turnX = true;
+    enableBoxes();
+    msgContainer.classList.add('hide')
+    playerTurn()
+    player_2.style.backgroundColor = 'white'
+};
+
+resetButton.addEventListener('click', resetGame)
+newGameBtn.addEventListener('click', resetGame)
+
 boxes.forEach( (box) => {
     box.addEventListener('click', () => {
         console.log('button clicked')
         if (turnX){
             box.innerText = 'X';
             box.style.backgroundColor = 'red'
+            player_1.style.backgroundColor = 'white'
+            player_2.style.backgroundColor = 'green'
             turnX = false;
         }else{
             box.innerText = 'O'
             box.style.backgroundColor = 'blue'
+            player_1.style.backgroundColor = 'green'
+            player_2.style.backgroundColor = 'white'
             turnX = true
         }box.disabled = true;
         checkWinner();
@@ -43,21 +64,19 @@ enableBoxes = () => {
     for (box of boxes){
         box.disabled = false;
         box.innerText = ''
+        box.style.backgroundColor = 'white'
     }
-}
+};
 
 
-msgContainer = document.getElementById('msgContainer')
+// msgContainer = document.getElementById('msgContainer')
 let showWinner = (winner) => {
-    if (winner == 'X'){
-        winner = 'Player 1'
-    }else{
-        winner = 'Player 2'
-    }
-    greet.innerText = `Congratulations, ${winner} win!`
-    msg-container.classList.remove('hide')
+    let WinnerName = (winner == 'X') ? 'Player 1' : 'Player 2'
+    greet.innerText = `Congratulations, ${WinnerName} win!`
+    msgContainer.classList.remove('hide')
     disableBoxes();
 };
+
 
 let checkWinner = () => {
     for (let pattern of winningPatterns){
@@ -69,7 +88,6 @@ let checkWinner = () => {
         if (pos1Val != '' && pos2Val != '' && pos3Val != ''){
             if (pos1Val === pos2Val && pos2Val === pos3Val){
                 console.log('Winner', pos1Val)
-                // alert(`Winner, player${pos1Val}`)
                 showWinner(pos1Val);
             }
         }
